@@ -262,7 +262,7 @@ class HelperFunctionsTests(unittest.TestCase):
             # OS X non-framwework builds, Linux, FreeBSD, etc
             self.assertEqual(len(dirs), 2)
             wanted = os.path.join('xoxo', 'lib64',
-                                  'python%d.%d' % sys.version_info[:2],
+                                  'platform-python%d.%d' % sys.version_info[:2],
                                   'site-packages')
             self.assertEqual(dirs[0], wanted)
         else:
