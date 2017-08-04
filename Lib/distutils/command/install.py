@@ -59,7 +59,7 @@ if HAS_USER_SITE:
         'purelib': '$usersite',
         'platlib': '$usersite',
         'headers':
-            '$userbase/include/python$py_version_short$abiflags/$dist_name',
+            '$userbase/include/platform-python$py_version_short$abiflags/$dist_name',
         'scripts': '$userbase/bin',
         'data'   : '$userbase',
         }

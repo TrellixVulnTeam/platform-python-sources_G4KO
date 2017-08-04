@@ -51,8 +51,8 @@ LIBDEST=${prefix}/lib/python${VERSION}
 LIBPL=$(echo "@LIBPL@" | sed "s#$prefix_build#$prefix_real#")
 SO="@EXT_SUFFIX@"
 PYTHONFRAMEWORK="@PYTHONFRAMEWORK@"
-INCDIR="-I$includedir/python${VERSION}${ABIFLAGS}"
-PLATINCDIR="-I$includedir/python${VERSION}${ABIFLAGS}"
+INCDIR="-I$includedir/platform-python${VERSION}${ABIFLAGS}"
+PLATINCDIR="-I$includedir/platform-python${VERSION}${ABIFLAGS}"
 
 # Scan for --help or unknown argument.
 for ARG in $*
