@@ -747,7 +747,7 @@ class build_ext(Command):
         else:
             from distutils import sysconfig
             if sysconfig.get_config_var('Py_ENABLE_SHARED'):
-                pythonlib = 'python{}.{}{}'.format(
+                pythonlib = 'platformpython{}.{}{}'.format(
                     sys.hexversion >> 24, (sys.hexversion >> 16) & 0xff,
                     sysconfig.get_config_var('ABIFLAGS'))
                 return ext.libraries + [pythonlib]
