@@ -987,7 +987,7 @@ AC_SUBST(LIBRARY)
 AC_MSG_CHECKING(LIBRARY)
 if test -z "$LIBRARY"
 then
-	LIBRARY='libplatformpython$(VERSION)$(ABIFLAGS).a'
+	LIBRARY='libplatform-python$(VERSION)$(ABIFLAGS).a'
 fi
 AC_MSG_RESULT($LIBRARY)
 
@@ -1134,48 +1134,48 @@ if test $enable_shared = "yes"; then
   AC_DEFINE(Py_ENABLE_SHARED, 1, [Defined if Python is built as a shared library.])
   case $ac_sys_system in
     CYGWIN*)
-          LDLIBRARY='libplatformpython$(LDVERSION).dll.a'
-          DLLLIBRARY='libplatformpython$(LDVERSION).dll'
+          LDLIBRARY='libplatform-python$(LDVERSION).dll.a'
+          DLLLIBRARY='libplatform-python$(LDVERSION).dll'
           ;;
     SunOS*)
-	  LDLIBRARY='libplatformpython$(LDVERSION).so'
+	  LDLIBRARY='libplatform-python$(LDVERSION).so'
 	  BLDLIBRARY='-Wl,-R,$(LIBDIR) -L. -lplatformpython$(LDVERSION)'
 	  RUNSHARED=LD_LIBRARY_PATH=`pwd`${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 	  INSTSONAME="$LDLIBRARY".$SOVERSION
 	  if test "$with_pydebug" != yes
 	  then
-	      PY3LIBRARY=libplatformpython3.so
+	      PY3LIBRARY=libplatform-python3.so
 	  fi
           ;;
     Linux*|GNU*|NetBSD*|FreeBSD*|DragonFly*|OpenBSD*)
-	  LDLIBRARY='libplatformpython$(LDVERSION).so'
+	  LDLIBRARY='libplatform-python$(LDVERSION).so'
 	  BLDLIBRARY='-L. -lplatformpython$(LDVERSION)'
 	  RUNSHARED=LD_LIBRARY_PATH=`pwd`${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 	  INSTSONAME="$LDLIBRARY".$SOVERSION
 	  if test "$with_pydebug" != yes
           then
-	      PY3LIBRARY=libplatformpython3.so
+	      PY3LIBRARY=libplatform-python3.so
 	  fi
 	  ;;
     hp*|HP*)
 	  case `uname -m` in
 		ia64)
-			LDLIBRARY='libplatformpython$(LDVERSION).so'
+			LDLIBRARY='libplatform-python$(LDVERSION).so'
 			;;
 		*)
-			LDLIBRARY='libplatformpython$(LDVERSION).sl'
+			LDLIBRARY='libplatform-python$(LDVERSION).sl'
 			;;
 	  esac
 	  BLDLIBRARY='-Wl,+b,$(LIBDIR) -L. -lplatformpython$(LDVERSION)'
 	  RUNSHARED=SHLIB_PATH=`pwd`${SHLIB_PATH:+:${SHLIB_PATH}}
 	  ;;
     Darwin*)
-    	LDLIBRARY='libplatformpython$(LDVERSION).dylib'
+    	LDLIBRARY='libplatform-python$(LDVERSION).dylib'
 	BLDLIBRARY='-L. -lplatformpython$(LDVERSION)'
 	RUNSHARED=DYLD_LIBRARY_PATH=`pwd`${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
 	;;
     AIX*)
-	LDLIBRARY='libplatformpython$(LDVERSION).so'
+	LDLIBRARY='libplatform-python$(LDVERSION).so'
 	RUNSHARED=LIBPATH=`pwd`${LIBPATH:+:${LIBPATH}}
 	;;
 
@@ -1185,7 +1185,7 @@ else # shared is disabled
   case $ac_sys_system in
     CYGWIN*)
           BLDLIBRARY='$(LIBRARY)'
-          LDLIBRARY='libplatformpython$(LDVERSION).dll.a'
+          LDLIBRARY='libplatform-python$(LDVERSION).dll.a'
           ;;
   esac
 fi
@@ -2679,7 +2679,7 @@ AC_MSG_RESULT($CFLAGSFORSHARED)
 # For platforms on which shared libraries are not allowed to have unresolved
 # symbols, this must be set to $(LIBS) (expanded by make). We do this even
 # if it is not required, since it creates a dependency of the shared library
-# to LIBS. This, in turn, means that applications linking the shared libplatformpython
+# to LIBS. This, in turn, means that applications linking the shared libplatform-python
 # don't need to link LIBS explicitly. The default should be only changed
 # on systems where this approach causes problems.
 AC_SUBST(SHLIBS)
