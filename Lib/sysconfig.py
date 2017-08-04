@@ -20,14 +20,14 @@ __all__ = [
 
 _INSTALL_SCHEMES = {
     'posix_prefix': {
-        'stdlib': '{installed_base}/lib64/python{py_version_short}',
-        'platstdlib': '{platbase}/lib64/python{py_version_short}',
-        'purelib': '{base}/lib/python{py_version_short}/site-packages',
-        'platlib': '{platbase}/lib64/python{py_version_short}/site-packages',
+        'stdlib': '{installed_base}/lib64/platform-python{py_version_short}',
+        'platstdlib': '{platbase}/lib64/platform-python{py_version_short}',
+        'purelib': '{base}/lib/platform-python{py_version_short}/site-packages',
+        'platlib': '{platbase}/lib64/platform-python{py_version_short}/site-packages',
         'include':
-            '{installed_base}/include/python{py_version_short}{abiflags}',
+            '{installed_base}/include/platform-python{py_version_short}{abiflags}',
         'platinclude':
-            '{installed_platbase}/include/python{py_version_short}{abiflags}',
+            '{installed_platbase}/include/platform-python{py_version_short}{abiflags}',
         'scripts': '{base}/bin',
         'data': '{base}',
         },
@@ -61,11 +61,11 @@ _INSTALL_SCHEMES = {
         'data': '{userbase}',
         },
     'posix_user': {
-        'stdlib': '{userbase}/lib64/python{py_version_short}',
-        'platstdlib': '{userbase}/lib64/python{py_version_short}',
-        'purelib': '{userbase}/lib/python{py_version_short}/site-packages',
-        'platlib': '{userbase}/lib64/python{py_version_short}/site-packages',
-        'include': '{userbase}/include/python{py_version_short}',
+        'stdlib': '{userbase}/lib64/platform-python{py_version_short}',
+        'platstdlib': '{userbase}/lib64/platform-python{py_version_short}',
+        'purelib': '{userbase}/lib/platform-python{py_version_short}/site-packages',
+        'platlib': '{userbase}/lib64/platform-python{py_version_short}/site-packages',
+        'include': '{userbase}/include/platform-python{py_version_short}',
         'scripts': '{userbase}/bin',
         'data': '{userbase}',
         },

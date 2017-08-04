@@ -494,7 +494,7 @@ calculate_path(void)
     _pythonpath = Py_DecodeLocale(PYTHONPATH, NULL);
     _prefix = Py_DecodeLocale(PREFIX, NULL);
     _exec_prefix = Py_DecodeLocale(EXEC_PREFIX, NULL);
-    lib_python = Py_DecodeLocale("lib64/python" VERSION, NULL);
+    lib_python = Py_DecodeLocale("lib64/platform-python" VERSION, NULL);
 
     if (!_pythonpath || !_prefix || !_exec_prefix || !lib_python) {
         Py_FatalError(
