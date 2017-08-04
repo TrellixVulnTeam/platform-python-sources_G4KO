@@ -1139,7 +1139,7 @@ if test $enable_shared = "yes"; then
           ;;
     SunOS*)
 	  LDLIBRARY='libplatformpython$(LDVERSION).so'
-	  BLDLIBRARY='-Wl,-R,$(LIBDIR) -L. -lpython$(LDVERSION)'
+	  BLDLIBRARY='-Wl,-R,$(LIBDIR) -L. -lplatformpython$(LDVERSION)'
 	  RUNSHARED=LD_LIBRARY_PATH=`pwd`${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 	  INSTSONAME="$LDLIBRARY".$SOVERSION
 	  if test "$with_pydebug" != yes
@@ -1149,7 +1149,7 @@ if test $enable_shared = "yes"; then
           ;;
     Linux*|GNU*|NetBSD*|FreeBSD*|DragonFly*|OpenBSD*)
 	  LDLIBRARY='libplatformpython$(LDVERSION).so'
-	  BLDLIBRARY='-L. -lpython$(LDVERSION)'
+	  BLDLIBRARY='-L. -lplatformpython$(LDVERSION)'
 	  RUNSHARED=LD_LIBRARY_PATH=`pwd`${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 	  INSTSONAME="$LDLIBRARY".$SOVERSION
 	  if test "$with_pydebug" != yes
@@ -1166,12 +1166,12 @@ if test $enable_shared = "yes"; then
 			LDLIBRARY='libplatformpython$(LDVERSION).sl'
 			;;
 	  esac
-	  BLDLIBRARY='-Wl,+b,$(LIBDIR) -L. -lpython$(LDVERSION)'
+	  BLDLIBRARY='-Wl,+b,$(LIBDIR) -L. -lplatformpython$(LDVERSION)'
 	  RUNSHARED=SHLIB_PATH=`pwd`${SHLIB_PATH:+:${SHLIB_PATH}}
 	  ;;
     Darwin*)
     	LDLIBRARY='libplatformpython$(LDVERSION).dylib'
-	BLDLIBRARY='-L. -lpython$(LDVERSION)'
+	BLDLIBRARY='-L. -lplatformpython$(LDVERSION)'
 	RUNSHARED=DYLD_LIBRARY_PATH=`pwd`${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
 	;;
     AIX*)
