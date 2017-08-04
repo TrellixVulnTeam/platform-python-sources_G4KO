@@ -137,10 +137,10 @@ SCRIPTDIR=	$(prefix)/lib64
 ABIFLAGS=	@ABIFLAGS@
 
 # Detailed destination directories
-BINLIBDEST=	$(LIBDIR)/python$(VERSION)
-LIBDEST=	$(SCRIPTDIR)/python$(VERSION)
-INCLUDEPY=	$(INCLUDEDIR)/python$(LDVERSION)
-CONFINCLUDEPY=	$(CONFINCLUDEDIR)/python$(LDVERSION)
+BINLIBDEST=	$(LIBDIR)/platform-python$(VERSION)
+LIBDEST=	$(SCRIPTDIR)/platform-python$(VERSION)
+INCLUDEPY=	$(INCLUDEDIR)/platform-python$(LDVERSION)
+CONFINCLUDEPY=	$(CONFINCLUDEDIR)/platform-python$(LDVERSION)
 
 # Symbols used for using shared libraries
 SHLIB_SUFFIX=	@SHLIB_SUFFIX@
