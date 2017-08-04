@@ -603,7 +603,7 @@ libplatformpython$(VERSION).sl: $(LIBRARY_OBJS)
 # to the stripped DWARF data for the shared library.
 gdbhooks: $(BUILDPYTHON)-gdb.py
 
-SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libplatformpython.py
+SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libpython.py
 $(BUILDPYTHON)-gdb.py: $(SRC_GDB_HOOKS)
 	$(INSTALL_DATA) $(SRC_GDB_HOOKS) $(BUILDPYTHON)-gdb.py
 
