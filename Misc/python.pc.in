@@ -10,4 +10,4 @@ Requires:
 Version: @VERSION@
 Libs.private: @LIBS@
 Libs: -L${libdir} -lplatformpython@VERSION@@ABIFLAGS@
-Cflags: -I${includedir}/python@VERSION@@ABIFLAGS@
+Cflags: -I${includedir}/platform-python@VERSION@@ABIFLAGS@
